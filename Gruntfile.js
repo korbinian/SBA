@@ -8,7 +8,9 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		concat: {
 			dist: {
-				src: 'dev/scripts/*.js',
+				src: [
+					'dev/scripts/*.js'
+				],
 				dest: 'build/scripts/script.js'
 			}
 		},
@@ -43,7 +45,8 @@ module.exports = function(grunt) {
 				files: [{
 					cwd: 'dev',
 					src: [
-						'*.html'
+						'*.html', 
+						'scripts/vendor/*.js'
 					],
 					dest: 'build',
 
