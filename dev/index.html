@@ -1,9 +1,9 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="sba">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title></title>
+		<title>Schnadenberger Brünjes Architekten</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,13 +13,13 @@
 		<script src="scripts/vendor/angular-resource.min.js"></script>
 		<script src="scripts/vendor/angular-route.min.js"></script>
 		<script src="scripts/vendor/angular-sanitize.min.js"></script>
+		<script src="scripts/vendor/angular-ui-router.min.js"></script>
+		
 		<script src="scripts/script.js"></script>
 
 	</head>
 	<body>
-		<label>Name:</label>
-		<input type="text" ng-model="yourName" placeholder="Enter a name here">
-		<hr>
-		<h1>Hello {{yourName}}!</h1>
+		
+		<div class="page {{ pageClass }}"  ui-view></div>
 	</body>
 </html>
