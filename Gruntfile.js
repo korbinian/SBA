@@ -5,6 +5,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-sync');
+	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.initConfig({
 		concat: {
 			dist: {
@@ -40,6 +41,16 @@ module.exports = function(grunt) {
 				src: 'build/styles/style.css'
 			}
 		},
+		browserSync: {
+			dev: {
+				bsFiles: {
+					src : 'build/styles/style.css'
+				},
+				options: {
+					proxy: "localhost"
+				}
+			}
+		},
 		sync: {
 			dist: {
 				files: [{
@@ -55,7 +66,14 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			styles: {
-				files: 'dev/styles/*.scss',
+				files: [
+					'dev/styles/*.scss',
+					'dev/styles/global/*.scss',
+					'dev/styles/modules/*.scss',
+					'dev/styles/pages/*.scss',
+					'dev/styles/sections/*.scss',
+					'dev/styles/vendor/*.scss',
+				],
 				tasks: ['sass', 'autoprefixer']
 			},
 			scripts: {
@@ -69,5 +87,5 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['sass', 'autoprefixer']);
+	grunt.registerTask('default', ['watch', 'browserSync']);
 };

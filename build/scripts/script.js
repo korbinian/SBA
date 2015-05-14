@@ -22,7 +22,8 @@ sba.config(function($stateProvider, $urlRouterProvider) {
         url: '/contact',
         templateUrl: 'contact.html',
         controller: 'contactController',
-    })
+    });
+
 });
 
 sba.controller('homeController', function($scope) {
