@@ -1,3 +1,64 @@
+
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after { 
+	box-sizing: inherit;
+}
+
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust:     100%;
+}
+
 body {
+	margin: 0;
+	background: $black;
+	color: $white;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+	display: block;
+}
+
+audio, video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+b, strong {
+	font-weight: $font-weight-bold;
+}
+
+small {
+	font-size: $font-size-s;
+}
+
+sub, sup {
+	font-size: $font-size-s;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+img {
+	border: 0;
+	height: auto;
+	max-width: 100%;
+	vertical-align: bottom;
+}
+
+figure {
 	margin: 0;
 }

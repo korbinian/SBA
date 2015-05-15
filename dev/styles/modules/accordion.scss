@@ -1,0 +1,15 @@
+.accordion {
+	border-top: 1px solid;
+	margin-left: -10px;
+	width: calc(100% + 20px);
+	header {
+		line-height: 21px;
+		text-transform: uppercase;
+		@include clearfix;
+	}
+	li {
+		border-bottom: 1px solid;
+		padding: 0 10px;
+
+	}
+}

@@ -23,3 +23,42 @@
 	font-stretch: normal;
 	unicode-range: U+0020-2666;
 }
+
+body, button, input, select, textarea, h1, h2, h3, h4, h5, h6 {
+	@include font-m;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+}
+
+a {
+	background-color: transparent;
+	text-decoration: none;
+	color: $black;
+	&:hover {
+		color: $blue;
+	}
+	&:active, &:hover {
+		outline: 0;
+	}
+}
+
+::-moz-selection {
+	color: $white;
+	background: $black;
+}
+
+::selection {
+	color: $white; 
+	background: $black;
+}
+
+.intro {
+	@include font-l;
+	smargin-bottom: $line-height-m;
+}
+
+.site-content p {
+	margin-bottom: $line-height-m;
+}

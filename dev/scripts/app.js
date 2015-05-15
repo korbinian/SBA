@@ -5,43 +5,33 @@ sba.config(function($stateProvider, $urlRouterProvider) {
         url: '/',
         templateUrl: 'home.html',
         controller: 'homeController',
-        title: 'home'
+        title: 'home',
+        controller: function($scope) {
+            $scope.pageClass = 'page-home';
+        }
     }).state('news', {
         url: '/news',
         templateUrl: 'news.html',
-        controller: 'newsController',
+        controller: function($scope) {
+            $scope.pageClass = 'page-news';
+        }
     }).state('projects', {
         url: '/projects',
         templateUrl: 'projects.html',
-        controller: 'projectsController',
+        controller: function($scope) {
+            $scope.pageClass = 'page-projects';
+        },
     }).state('profile', {
         url: '/profile',
         templateUrl: 'profile.html',
-        controller: 'profileController',
+        controller: function($scope) {
+            $scope.pageClass = 'page-profile';
+        }
     }).state('contact', {
         url: '/contact',
         templateUrl: 'contact.html',
-        controller: 'contactController',
+        controller: function($scope) {
+            $scope.pageClass = 'page-contact';
+        }
     });
-
-});
-
-sba.controller('homeController', function($scope) {
-    $scope.pageClass = 'page-home';
-});
-
-sba.controller('newsController', function($scope) {
-    $scope.pageClass = 'page-news';
-});
-
-sba.controller('projectsController', function($scope) {
-    $scope.pageClass = 'page-projects';
-});
-
-sba.controller('profileController', function($scope) {
-    $scope.pageClass = 'page-profile';
-});
-
-sba.controller('contactController', function($scope) {
-    $scope.pageClass = 'page-contact';
 });

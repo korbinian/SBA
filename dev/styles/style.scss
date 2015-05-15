@@ -12,6 +12,7 @@
 
 @import 'global/base';
 @import 'global/typography';
+@import 'global/lists';
 @import 'global/helpers';
 @import 'global/layout';
 @import 'global/transitions';
@@ -48,68 +49,54 @@
 
 // TEMPORARY STYLES:
 
-
-
-* {
-	font-family: $font-family-copy;
-	font-size: 13px;
-	color: black;
-	font-weight: normal;
-	margin: 0;
-}
-
-a {
-	text-decoration: none;
-	&:hover {
-		color: blue;
+.projects {
+	@include clearfix;
+	margin-left: -10px;
+	.project {
+		max-width: 437px;
+		float: left;
+		margin-left: 10px;
+		margin-bottom: 10px;
+		background: $black;
+		@include clearfix;
+		img {
+			max-width: 100%;
+			margin: 0;
+		}
+	}
+	.project-number {
+		@include font-l;
+		float: left;
+		width: 25%;
+	}
+	.project-title, .project-location, .project-year {
+		text-transform: uppercase;
+		float: right;
+		width: 75%;
 	}
 }
 
-.site-header {
-	line-height: 25px;
-	padding: 0 10px;
-	background: white;
-	border-bottom: 1px solid black;
-	overflow: hidden;
+.download {
+	text-transform: uppercase;
+	display: block;
 }
 
-.site-title {
-	float: left;
+.site-content img {
+	margin-bottom: $line-height-m;
 }
 
-.language {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	float: right;
-	li {
-		display: inline-block;
-	}
-	li.active {
-		color: blue;
-	}
+.project a img {
+	transition: opacity .2s;
 }
 
-.site-nav {
-	overflow: hidden;
-	padding: 0 10px;
-	ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-	li {
-		display: inline-block;
-		margin-right: 5px;
-	}
-	li, a {
-		font-size: 26px;
-		line-height: 37px;
-		font-family: $font-family-display;
-		font-weight: bold;
-	}
-	li.active {
-		color: blue;
-	}
-	
+.project a:hover img {
+	opacity: 0;
+	transition: opacity .2s;
+}
+
+.project-info {
+	padding: 5px 0;
+	@include clearfix;
+	background: $white;
+
 }

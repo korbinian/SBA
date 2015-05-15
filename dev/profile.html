@@ -1,21 +1,44 @@
-<header class="site-header">
+<header class="site-header" ng-include="'templates/header.html'"></header>
+
+<nav class="site-nav" ng-include="'templates/nav.html'"></nav>
+
+<main class="site-content">
 	<div class="row">
-		<h1 class="site-title">
-			<a href="#/">Schnadenberger Brünjes Architekten</a>
-		</h1>
-
-		<ul class="language">
-			<li class="active">De</li>
-			<li><a href="">En</a></li>
+		<div class="intro">
+			Wir streben nach Einfachheit und Klarheit, auch wenn der Weg dorthin komplex ist. Intensive Auseinandersetzung mit den Nutzern und deren Anforderungen, sowie dem Ort und dessen Identität stehen am Beginn jedes Projekts. Vorausschauender Blick in Richtung möglicher Veränderungen in Funktion und Umwelt, als ﬂexible Parameter in der Planung. Ziel ist es das ideale Maß der Architektur zu entwickeln, welches der Nutzung, dem Anspruch, dem Ort und auch dem vereinbarten Budgets entspricht.
+		</div>
+		<a href="" class="download">→ Download Studio-Profile</a>
+		<img src="images/profile/profile-1.jpg" alt="">
+		
+		<ul class="accordion profile">
+			<li>
+				<header>
+					Dipl.-Ing. Ira Simone Schnadenberger
+				</header>
+				
+			</li>
+			<li>
+				<header>
+					Dipl.-Ing. Katrin Brünjes
+				</header>
+			</li>
+			<li>
+				<header>
+					Collaborators
+				</header>
+			</li>
+			<li>
+				<header>
+					Auszeichnungen
+				</header>
+			</li>
+			<li>
+				<header>
+					Publikationen
+				</header>
+			</li>
 		</ul>
-	</div>
-</header>
 
-<nav class="site-nav">
-	<ul>
-		<li><a href="#news">News</a></li>
-		<li><a href="#projects">Projekte</a></li>
-		<li class="active">Profil</li>
-		<li><a href="#contact">Kontakt</a></li>
-	</ul>
-</nav>
+	</div>
+</main>
+

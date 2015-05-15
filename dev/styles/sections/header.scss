@@ -1,0 +1,22 @@
+.site-header {
+	background: $white;
+	border-bottom: 1px solid black;
+	position: fixed;
+	width: 100%;
+	@include clearfix;
+	* {
+		line-height: 25px;
+	}
+	.site-title {
+		float: left;
+	}
+	.language {
+		float: right;
+		li {
+			display: inline-block;
+		}
+		.active {
+			color: $blue;
+		}
+	}
+}

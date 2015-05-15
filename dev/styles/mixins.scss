@@ -1,0 +1,21 @@
+@mixin clearfix() {
+	&:after {
+	    content: "";
+	    display: table;
+	    clear: both;
+	  }
+}
+
+@mixin font-l()  {
+	font-size: $font-size-l;
+	line-height: $line-height-l;
+	font-weight: $font-weight-bold;
+	font-family: $font-family-display;
+}
+
+@mixin font-m()  {
+	font-size: $font-size-m;
+	line-height: $line-height-m;
+	font-weight: $font-weight-normal;
+	font-family: $font-family-copy;
+}
