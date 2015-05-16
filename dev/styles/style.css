@@ -1,0 +1,407 @@
+/*--------------------------------------------------------------------------------------------------
+		SETUP
+--------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------
+		GLOBAL STYLES
+--------------------------------------------------------------------------------------------------*/
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+
+audio, video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+small {
+  font-size: 11px;
+}
+
+sub, sup {
+  font-size: 11px;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+figure {
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'LetterGothicStd-Regular';
+  src: url("fonts/LetterGothicStd_gdi.eot");
+  src: url("fonts/LetterGothicStd_gdi.eot?#iefix") format("embedded-opentype"), url("fonts/LetterGothicStd_gdi.woff") format("woff"), url("fonts/LetterGothicStd_gdi.ttf") format("truetype"), url("fonts/LetterGothicStd_gdi.svg#LetterGothicStd-Regular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2666;
+}
+@font-face {
+  font-family: 'LetterGothicStd-Bold';
+  src: url("fonts/LetterGothicStd-Bold_gdi.eot");
+  src: url("fonts/LetterGothicStd-Bold_gdi.eot?#iefix") format("embedded-opentype"), url("fonts/LetterGothicStd-Bold_gdi.woff") format("woff"), url("fonts/LetterGothicStd-Bold_gdi.ttf") format("truetype"), url("fonts/LetterGothicStd-Bold_gdi.svg#LetterGothicStd-Bold") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-2666;
+}
+body, button, input, select, textarea, h1, h2, h3, h4, h5, h6 {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: normal;
+  font-family: "LetterGothicStd-Bold", consolas, monospace;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  color: #0000ff;
+}
+a:active, a:hover {
+  outline: 0;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #000;
+}
+
+::selection {
+  color: #fff;
+  background: #000;
+}
+
+.intro, .intro * {
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: bold;
+  font-family: "akzidenz grotesk", "helvetica", arial, sans-serif;
+}
+
+.site-content p {
+  margin-bottom: 16px;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul li, ol li {
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  padding: 0 10px;
+}
+
+/*--------------------------------------------------------------------------------------------------
+		MODULES
+--------------------------------------------------------------------------------------------------*/
+.accordion {
+  border-top: 1px solid;
+  margin-left: -10px;
+  width: calc(100% + 20px);
+}
+.accordion header {
+  line-height: 21px;
+  text-transform: uppercase;
+}
+.accordion header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.accordion li {
+  border-bottom: 1px solid;
+  padding: 0 10px;
+}
+
+.slider {
+  sposition: relative;
+}
+.slider .slide {
+  sposition: absolute;
+}
+
+/*--------------------------------------------------------------------------------------------------
+		SECTIONS
+--------------------------------------------------------------------------------------------------*/
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid black;
+  position: fixed;
+  width: 100%;
+}
+.site-header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.site-header * {
+  line-height: 25px;
+}
+.site-header .site-title {
+  float: left;
+}
+.site-header .language {
+  float: right;
+}
+.site-header .language li {
+  display: inline-block;
+}
+.site-header .language .active {
+  color: #0000ff;
+}
+
+.site-nav {
+  padding-top: 26px;
+}
+.site-nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.site-nav li {
+  display: inline-block;
+  margin-right: 5px;
+}
+.site-nav li, .site-nav a {
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: bold;
+  font-family: "akzidenz grotesk", "helvetica", arial, sans-serif;
+}
+.site-nav a.active {
+  color: blue;
+}
+
+.site-nav {
+  background: white;
+}
+
+.site-content {
+  background: #fff;
+  color: #000;
+  height: calc(100vh - 26px - 30px);
+}
+
+/*--------------------------------------------------------------------------------------------------
+		PAGES
+--------------------------------------------------------------------------------------------------*/
+.page-home main {
+  padding-top: 26px;
+}
+
+.news .news-item-date {
+  float: left;
+  width: 120px;
+}
+.news .news-item-title {
+  float: left;
+}
+
+.page-project .project {
+  width: 768px;
+  padding-bottom: 100px;
+}
+
+.project-details {
+  margin-bottom: 16px;
+}
+.project-details h3 {
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 10px;
+}
+.project-details p {
+  display: inline-block;
+  margin: 0;
+}
+
+/*
+
+.page-project .wrapper {
+	display: table;
+	width: 100%;
+	.table-row	{
+		display: table-row;
+	}
+	.project {
+		display: table-cell;
+	}
+	.next {
+		display: table-cell;
+		vertical-align: top;
+	}
+} */
+/*--------------------------------------------------------------------------------------------------
+		EXTERNAL LIBRARIES
+--------------------------------------------------------------------------------------------------*/
+.projects {
+  margin-left: -10px;
+}
+.projects:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.projects .project {
+  max-width: 437px;
+  float: left;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  background: #000;
+}
+.projects .project:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.projects .project img {
+  max-width: 100%;
+  margin: 0;
+}
+.projects .project-number {
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: bold;
+  font-family: "akzidenz grotesk", "helvetica", arial, sans-serif;
+  float: left;
+  width: 25%;
+}
+.projects .project-title, .projects .project-location, .projects .project-year {
+  text-transform: uppercase;
+  float: right;
+  width: 75%;
+}
+
+.download {
+  text-transform: uppercase;
+  display: block;
+}
+
+.site-content img {
+  margin-bottom: 16px;
+}
+
+.project a img {
+  -webkit-transition: opacity .2s;
+          transition: opacity .2s;
+}
+
+.project a:hover img {
+  opacity: 0;
+  -webkit-transition: opacity .2s;
+          transition: opacity .2s;
+}
+
+.project-info {
+  padding: 5px 0;
+  background: #fff;
+}
+.project-info:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page-project .site-content {
+  padding-top: 26px;
+  height: calc(100vh - 26px);
+  background: #000;
+  color: #fff;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.wrapper .project {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 768px;
+      -ms-flex: 0 0 768px;
+          flex: 0 0 768px;
+}
+.wrapper #next {
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+      -ms-flex: auto;
+          flex: auto;
+}
+
+.project {
+  float: left;
+}
+
+#next-title {
+  opacity: 0;
+  position: absolute;
+  color: #fff;
+  -webkit-transition: opacity .2s;
+          transition: opacity .2s;
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: bold;
+  font-family: "akzidenz grotesk", "helvetica", arial, sans-serif;
+}
+
+#next:hover #next-title {
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+          transition: opacity 1s;
+}
+
+#next {
+  cursor: none;
+}

@@ -1,0 +1,35 @@
+.page-project .project {
+	width: 768px;
+	padding-bottom: 100px;
+}
+
+.project-details {
+	margin-bottom: $line-height-m;
+	h3 {
+		text-transform: uppercase;
+		display: inline-block;
+		margin-right: 10px;
+	}
+	p {
+		display: inline-block;
+		margin: 0;
+	}
+}
+
+/*
+
+.page-project .wrapper {
+	display: table;
+	width: 100%;
+	.table-row	{
+		display: table-row;
+	}
+	.project {
+		display: table-cell;
+	}
+	.next {
+		display: table-cell;
+		vertical-align: top;
+	}
+} */
+

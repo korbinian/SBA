@@ -39,6 +39,7 @@
 @import 'pages/front';
 @import 'pages/news';
 @import 'pages/projects';
+@import 'pages/project';
 @import 'pages/profile';
 @import 'pages/contact';
 @import 'pages/showcase';
@@ -99,4 +100,44 @@
 	@include clearfix;
 	background: $white;
 
+}
+
+.page-project .site-content {
+	padding-top: 26px;
+	height: calc(100vh - 26px);
+	background: $black;
+	color: $white;
+}
+
+
+.wrapper {
+	display: flex;
+	.project {
+		flex: 0 0 768px;
+	}
+	#next {
+		flex: auto;
+	}
+}
+
+.project {
+	float: left;
+}
+
+#next-title {
+	opacity: 0;
+	position: absolute;
+	color: $white;
+	transition: opacity .2s;
+	@include font-l;
+}
+
+#next:hover #next-title {
+
+	opacity: 1;
+	transition: opacity 1s;
+}
+
+#next {
+	cursor: none;
 }

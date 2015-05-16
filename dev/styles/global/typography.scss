@@ -54,9 +54,9 @@ a {
 	background: $black;
 }
 
-.intro {
+.intro, .intro * {
 	@include font-l;
-	smargin-bottom: $line-height-m;
+	
 }
 
 .site-content p {

@@ -10,9 +10,11 @@ module.exports = function(grunt) {
 		concat: {
 			dist: {
 				src: [
-					'dev/scripts/*.js'
+					'dev/scripts/*.js',
+					'!dev/scripts/script.js',
+					'!dev/scripts/script.min.js'
 				],
-				dest: 'build/scripts/script.js'
+				dest: 'dev/scripts/script.js'
 			}
 		},
 		uglify: {
@@ -22,7 +24,7 @@ module.exports = function(grunt) {
 					sourceMap: true 
 				},
 				src: '<%= concat.dist.dest %>',
-				dest: 'build/scripts/script.min.js'
+				dest: 'dev/scripts/script.min.js'
 			}
 		},
 		sass: {
@@ -31,24 +33,14 @@ module.exports = function(grunt) {
 					style: 'expanded'
 				},
 				files: {
-					'build/styles/style.css': 'dev/styles/style.scss',
+					'dev/styles/style.css': 'dev/styles/style.scss',
 
 				}
 			}
 		},
 		autoprefixer: {
 			dist: {
-				src: 'build/styles/style.css'
-			}
-		},
-		browserSync: {
-			dev: {
-				bsFiles: {
-					src : 'build/styles/style.css'
-				},
-				options: {
-					proxy: "localhost"
-				}
+				src: 'dev/styles/style.css'
 			}
 		},
 		sync: {
@@ -88,5 +80,5 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('default', ['watch', 'browserSync']);
+	grunt.registerTask('default', ['watch']);
 };

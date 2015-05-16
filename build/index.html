@@ -1,6 +1,7 @@
 <!doctype html>
 <html ng-app="sba">
 	<head>
+
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>Schnadenberger Brünjes Architekten</title>
@@ -8,15 +9,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link rel="stylesheet" href="styles/style.css">
+		
+		<script src="scripts/vendor/jquery-2.1.4.min.js"></script>
 
 		<script src="scripts/vendor/angular.min.js"></script>
-		<script src="scripts/vendor/angular-animate.min.js"></script>
 		<script src="scripts/vendor/angular-ui-router.min.js"></script>
 
 		<script src="scripts/script.js"></script>
 
+
+		<script>
+			$(document).bind('mousemove', function(e){
+				$('#next-title').css({
+					left: e.pageX + 5,
+					top: e.pageY - 20
+				});
+			});
+		</script>
 	</head>
 	<body>
+
 		<div class="page {{ pageClass }}"  ui-view></div>
+
 	</body>
 </html>
