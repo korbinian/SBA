@@ -1,6 +1,16 @@
-.slider {
-	sposition: relative;
-	.slide {
-		sposition: absolute;
-	}
+.carousel-inner {
+    position: relative;
+    div {
+        position: absolute;
+    }
+}
+
+.carousel-inner img {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.carousel-inner .active img {
+  opacity: 1;
+  transition: opacity 1s;
 }

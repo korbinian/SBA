@@ -14,14 +14,16 @@
 <main>
 	<div class="row">
 
-		<ul class="slider">
-			<li class="slide">
-				<img src="images/slider/slider-1.jpg" alt="">
-			</li>
-			<li class="slide">
-				<img src="images/slider/slider-1.jpg" alt="">
-			</li>
-		</ul>
+
+		<div ng-controller="CarouselDemoCtrl">
+			<div style="height: 305px">
+				<carousel interval="myInterval">
+					<slide ng-repeat="slide in slides" active="slide.active">
+						<img ng-src="{{slide.image}}" style="margin:auto;">
+					</slide>
+				</carousel>
+			</div>
+		</div>
 		
 	</div>
 </main>

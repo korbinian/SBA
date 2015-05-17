@@ -1,4 +1,4 @@
-var sba = angular.module('sba', ['ui.router']);
+var sba = angular.module('sba', ['ui.router', 'ngAnimate', 'ngTouch', 'ui.bootstrap']);
 
 sba.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
@@ -78,3 +78,13 @@ sba.controller('contactController', function($scope) {
     $scope.pageClass = 'page-contact';
 });
 
+// uses angular
+
+sba.controller('CarouselDemoCtrl', function ($scope) {
+    $scope.myInterval = 1000;
+    var slides = $scope.slides = [
+        { image: 'images/slider/slider-1.jpg' },
+        { image: 'images/slider/slider-2.jpg' },
+        { image: 'images/slider/slider-3.jpg' }
+    ];
+});

@@ -165,11 +165,23 @@ ul li, ol li {
   padding: 0 10px;
 }
 
-.slider {
-  sposition: relative;
+.carousel-inner {
+  position: relative;
 }
-.slider .slide {
-  sposition: absolute;
+.carousel-inner div {
+  position: absolute;
+}
+
+.carousel-inner img {
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+          transition: opacity 1s;
+}
+
+.carousel-inner .active img {
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+          transition: opacity 1s;
 }
 
 /*--------------------------------------------------------------------------------------------------
