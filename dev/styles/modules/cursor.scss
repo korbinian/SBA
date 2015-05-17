@@ -1,0 +1,21 @@
+#next-title {
+	opacity: 0;
+	position: absolute;
+	color: $white;
+	transition: opacity .2s;
+	@include font-l;
+}
+
+#next-title {
+	display: none;
+}
+
+#next:hover #next-title {
+	sopacity: 1;
+	display: block;
+	transition: opacity 1s;
+}
+
+#next {
+	cursor: none;
+}

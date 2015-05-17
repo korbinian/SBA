@@ -5,6 +5,12 @@
     }
 }
 
+.slider-front {
+	position: relative;
+	width: 760px;
+	height: 520px;
+}
+
 .carousel-inner img {
   opacity: 0;
   transition: opacity 1s;
@@ -13,4 +19,17 @@
 .carousel-inner .active img {
   opacity: 1;
   transition: opacity 1s;
+}
+
+
+.left.carousel-control {
+	display: block;
+	position: absolute;
+	z-index:99999;
+	sbackground: red;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	cursor: pointer;
 }

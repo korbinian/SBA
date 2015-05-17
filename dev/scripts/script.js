@@ -88,3 +88,37 @@ sba.controller('CarouselDemoCtrl', function ($scope) {
         { image: 'images/slider/slider-3.jpg' }
     ];
 });
+
+sba.controller('AccordionDemoCtrl', function ($scope) {
+  $scope.oneAtATime = true;
+
+  $scope.groups = [
+    {
+      title: 'Dynamic Group Header - 1',
+      content: 'Dynamic Group Body - 1'
+    },
+    {
+      title: 'Dynamic Group Header - 2',
+      content: 'Dynamic Group Body - 2'
+    }
+  ];
+
+  $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
+  $scope.addItem = function() {
+    var newItemNo = $scope.items.length + 1;
+    $scope.items.push('Item ' + newItemNo);
+  };
+
+  $scope.status = {
+    isFirstOpen: true,
+    isFirstDisabled: false
+  };
+});
+$(document).bind('mousemove', function(e){
+	$('#next-title').css({
+		opacity: 1,
+		left: e.pageX + 5,
+		top: e.pageY - 20
+	});
+});

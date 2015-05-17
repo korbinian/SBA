@@ -10,9 +10,7 @@
 
 		<link rel="stylesheet" href="styles/style.css">
 
-		
 		<script src="scripts/vendor/jquery-2.1.4.min.js"></script>
-
 
 		<script src="scripts/vendor/angular.min.js"></script>
 		<script src="scripts/vendor/angular-animate.min.js"></script>
@@ -20,25 +18,10 @@
 		<script src="scripts/vendor/angular-ui-router.min.js"></script>
 		<script src="scripts/vendor/ui-bootstrap-custom-tpls-0.13.0.min.js"></script>
 
-
 		<script src="scripts/script.js"></script>
 
-
-		<script>
-			$(document).bind('mousemove', function(e){
-				$('#next-title').css({
-					left: e.pageX + 5,
-					top: e.pageY - 20
-				});
-			});
-		</script>
 	</head>
 	<body>
-	
-
-
-
-
 
 		<div class="page {{ pageClass }}"  ui-view></div>
 

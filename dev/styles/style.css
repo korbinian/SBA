@@ -160,9 +160,17 @@ ul li, ol li {
   display: table;
   clear: both;
 }
-.accordion li {
+.accordion li, .accordion .news-item {
   border-bottom: 1px solid;
   padding: 0 10px;
+}
+
+.panel-collapse {
+  display: none;
+}
+
+.panel-collapse.in {
+  display: block;
 }
 
 .carousel-inner {
@@ -170,6 +178,12 @@ ul li, ol li {
 }
 .carousel-inner div {
   position: absolute;
+}
+
+.slider-front {
+  position: relative;
+  width: 760px;
+  height: 520px;
 }
 
 .carousel-inner img {
@@ -182,6 +196,45 @@ ul li, ol li {
   opacity: 1;
   -webkit-transition: opacity 1s;
           transition: opacity 1s;
+}
+
+.left.carousel-control {
+  display: block;
+  position: absolute;
+  z-index: 99999;
+  sbackground: red;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+#next-title {
+  opacity: 0;
+  position: absolute;
+  color: #fff;
+  -webkit-transition: opacity .2s;
+          transition: opacity .2s;
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: bold;
+  font-family: "akzidenz grotesk", "helvetica", arial, sans-serif;
+}
+
+#next-title {
+  display: none;
+}
+
+#next:hover #next-title {
+  sopacity: 1;
+  display: block;
+  -webkit-transition: opacity 1s;
+          transition: opacity 1s;
+}
+
+#next {
+  cursor: none;
 }
 
 /*--------------------------------------------------------------------------------------------------
@@ -366,6 +419,14 @@ ul li, ol li {
   clear: both;
 }
 
+.project a {
+  background: #fff;
+}
+
+.project a:visited .project-info {
+  color: grey;
+}
+
 .page-project .site-content {
   padding-top: 26px;
   height: calc(100vh - 26px);
@@ -394,26 +455,4 @@ ul li, ol li {
 
 .project {
   float: left;
-}
-
-#next-title {
-  opacity: 0;
-  position: absolute;
-  color: #fff;
-  -webkit-transition: opacity .2s;
-          transition: opacity .2s;
-  font-size: 25px;
-  line-height: 30px;
-  font-weight: bold;
-  font-family: "akzidenz grotesk", "helvetica", arial, sans-serif;
-}
-
-#next:hover #next-title {
-  opacity: 1;
-  -webkit-transition: opacity 1s;
-          transition: opacity 1s;
-}
-
-#next {
-  cursor: none;
 }

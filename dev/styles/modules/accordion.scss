@@ -7,9 +7,17 @@
 		text-transform: uppercase;
 		@include clearfix;
 	}
-	li {
+	li, .news-item {
 		border-bottom: 1px solid;
 		padding: 0 10px;
 
 	}
+}
+
+.panel-collapse {
+	display: none;
+}
+
+.panel-collapse.in {
+	display: block;
 }

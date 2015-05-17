@@ -23,6 +23,7 @@
 
 @import 'modules/accordion';
 @import 'modules/slider';
+@import 'modules/cursor';
 
 /*--------------------------------------------------------------------------------------------------
 		SECTIONS
@@ -103,7 +104,15 @@
 	padding: 5px 0;
 	@include clearfix;
 	background: $white;
+	
+}
 
+.project a {
+	background: #fff;
+}
+
+.project a:visited .project-info {
+	color: grey;
 }
 
 .page-project .site-content {
@@ -128,19 +137,3 @@
 	float: left;
 }
 
-#next-title {
-	opacity: 0;
-	position: absolute;
-	color: $white;
-	transition: opacity .2s;
-	@include font-l;
-}
-
-#next:hover #next-title {
-	opacity: 1;
-	transition: opacity 1s;
-}
-
-#next {
-	cursor: none;
-}
