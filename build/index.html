@@ -15,15 +15,21 @@
 		<script src="scripts/vendor/angular.min.js"></script>
 		<script src="scripts/vendor/angular-animate.min.js"></script>
 		<script src="scripts/vendor/angular-touch.min.js"></script>
+		<script src="scripts/vendor/angular-route.min.js"></script>
 		<script src="scripts/vendor/angular-ui-router.min.js"></script>
 		<script src="scripts/vendor/ui-bootstrap-custom-tpls-0.13.0.min.js"></script>
 
 		<script src="scripts/script.js"></script>
 
+
+
 	</head>
 	<body>
+		
+		<div class="page {{ pageClass }} {{'from-' + fromState.name}} {{toState.name}}" ui-view ng-controller="viewController">
+			
 
-		<div class="page {{ pageClass }}"  ui-view></div>
+		</div>
 
 	</body>
 </html>

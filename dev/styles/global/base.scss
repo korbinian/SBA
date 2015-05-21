@@ -16,9 +16,12 @@ html {
 
 body {
 	margin: 0;
-	background: $black;
-	color: $white;
+	overflow-x: hidden;
+	sbackground: $black;
+	scolor: $white;
 }
+
+
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
 	display: block;

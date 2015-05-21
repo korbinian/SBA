@@ -1,6 +1,10 @@
-var sba = angular.module('sba', ['ui.router', 'ngAnimate', 'ngTouch', 'ui.bootstrap']);
-
-sba.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+var sba = angular.module('sba', [
+        'ui.router', 
+        'ngAnimate', 
+        'ngTouch', 
+        'ui.bootstrap'
+    ])
+    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
     $urlRouterProvider.otherwise('/');
 
@@ -10,7 +14,7 @@ sba.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     .state('home', {
         url: '/',
         templateUrl: 'templates/pages/home.html',
-        controller: 'homeController'
+        controller: 'homeController',
     })
 
 
@@ -52,30 +56,33 @@ sba.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     });
 }]);
 
-
-
-
 sba.controller('homeController', function($scope) {
     $scope.pageClass = 'page-home';
+
 });
 
 sba.controller('newsController', function($scope) {
     $scope.pageClass = 'page-news';
+
 });
 
 sba.controller('projectsController', function($scope) {
     $scope.pageClass = 'page-projects';
+
 });
 sba.controller('projectController', function($scope) {
     $scope.pageClass = 'page-project';
+
 });
 
 sba.controller('profileController', function($scope) {
     $scope.pageClass = 'page-profile';
+
 });
 
 sba.controller('contactController', function($scope) {
     $scope.pageClass = 'page-contact';
+
 });
 
 // uses angular
@@ -115,6 +122,16 @@ sba.controller('AccordionDemoCtrl', function ($scope) {
     isFirstDisabled: false
   };
 });
+
+sba.controller('viewController', function ($scope){
+    $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+        console.log(fromState.name);
+        console.log(toState.name);
+        $scope.fromState = fromState;
+        $scope.toState = toState;
+    })
+});
+
 $(document).bind('mousemove', function(e){
 	$('#next-title').css({
 		opacity: 1,

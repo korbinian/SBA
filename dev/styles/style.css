@@ -20,8 +20,9 @@ html {
 
 body {
   margin: 0;
-  background: #000;
-  color: #fff;
+  overflow-x: hidden;
+  sbackground: #000;
+  scolor: #fff;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
@@ -139,6 +140,11 @@ ul li, ol li {
   padding: 0;
 }
 
+.page {
+  position: relative;
+  top: 26px;
+}
+
 .row {
   padding: 0 10px;
 }
@@ -243,8 +249,9 @@ ul li, ol li {
 .site-header {
   background: #fff;
   border-bottom: 1px solid black;
-  position: fixed;
+  sposition: fixed;
   width: 100%;
+  sz-index: 9999;
 }
 .site-header:after {
   content: "";
@@ -267,9 +274,6 @@ ul li, ol li {
   color: #0000ff;
 }
 
-.site-nav {
-  padding-top: 26px;
-}
 .site-nav:after {
   content: "";
   display: table;
@@ -294,16 +298,20 @@ ul li, ol li {
 }
 
 .site-content {
-  background: #fff;
-  color: #000;
-  height: calc(100vh - 26px - 30px);
+  sbackground: #fff;
+  scolor: #000;
+  sheight: calc(100vh - 26px - 30px);
 }
 
 /*--------------------------------------------------------------------------------------------------
 		PAGES
 --------------------------------------------------------------------------------------------------*/
-.page-home main {
-  padding-top: 26px;
+.page-home {
+  background: #000;
+  color: #fff;
+}
+.page-home .site-nav {
+  display: none;
 }
 
 .news .news-item-date {
@@ -352,7 +360,7 @@ ul li, ol li {
 		EXTERNAL LIBRARIES
 --------------------------------------------------------------------------------------------------*/
 .projects {
-  margin-left: -10px;
+  smargin-left: -10px;
 }
 .projects:after {
   content: "";
@@ -362,7 +370,7 @@ ul li, ol li {
 .projects .project {
   max-width: 437px;
   float: left;
-  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 10px;
   background: #000;
 }
@@ -455,4 +463,240 @@ ul li, ol li {
 
 .project {
   float: left;
+}
+
+.view {
+  width: 100%;
+  padding-left: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slideLeft.ng-enter, .slideLeft.ng-leave, .slideRight.ng-enter, .slideRight.ng-leave {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.slideLeft.ng-enter {
+  left: 100%;
+}
+
+.slideLeft.ng-enter.ng-enter-active {
+  left: 0;
+}
+
+.slideLeft.ng-leave.ng-leave-active {
+  left: -100%;
+}
+
+.slideRight.ng-enter {
+  left: -100%;
+}
+
+.slideRight.ng-enter.ng-enter-active {
+  left: 0;
+}
+
+.slideRight.ng-leave.ng-leave-active {
+  left: 100%;
+}
+
+/*
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+	transition: all 5s;
+}
+
+[ui-view].ng-enter main {
+	opacity: 0;
+	transition: all 5s;
+}
+
+[ui-view].ng-enter-active main {
+	opacity: 1;
+	transition: all 5s;
+}
+*/
+/*
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+	transition: all 1s ease-in-out;
+}
+
+.page {
+	position: absolute;
+	top: 0;
+	spadding-top: 26px;
+	width: 100vw;
+}
+
+main {
+	height: calc(100vh - 26px);
+	position: relative;
+	top: 26px;
+}
+
+/*
+[ui-view].ng-enter {
+  opacity: 0;
+  transform:scale3d(0.5, 0.5, 0.5);
+}
+
+[ui-view].ng-enter-active {
+  opacity: 1;
+  transform:scale3d(1, 1, 1);
+}
+
+[ui-view].ng-leave {
+  opacity: 1;
+  transform:translate3d(0, 0, 0);
+}
+
+[ui-view].ng-leave-active {
+  opacity: 0;
+  transform:translate3d(100px, 0, 0);
+}*/
+/*
+
+[ui-view].ng-enter { 
+	top: 100vh;
+	transition: all 1s; 
+}
+
+[ui-view].ng-enter-active { 
+	top: 0;
+	transition: all 1s; 
+}
+
+.page-home.ng-enter {
+	top: 0;
+}
+
+[ui-view].ng-leave { 
+	top: 0;
+	transition: all 1s; 
+}
+
+
+
+[ui-view].ng-leave-active  {
+	top: -100vh;
+	transition: all 1s;
+}
+*/
+.page {
+  position: absolute;
+  top: 0;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.page-home main {
+  padding-top: 26px;
+}
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+  -webkit-transition: all 1s ease-in-out;
+          transition: all 1s ease-in-out;
+}
+
+[ui-view].ng-leave {
+  display: none;
+}
+
+.news.from-projects,
+.news.from-profile,
+.news.from-contact {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: slideFromTop;
+          animation-name: slideFromTop;
+}
+
+.projects.from-news {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: slideFromBottom;
+          animation-name: slideFromBottom;
+}
+
+.projects.from-profile,
+.projects.from-contact {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: slideFromTop;
+          animation-name: slideFromTop;
+}
+
+.profile.from-news,
+.profile.from-projects {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: slideFromBottom;
+          animation-name: slideFromBottom;
+}
+
+.profile.from-contact {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: slideFromTop;
+          animation-name: slideFromTop;
+}
+
+.contact.from-news,
+.contact.from-projects,
+.contact.from-profile {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: slideFromBottom;
+          animation-name: slideFromBottom;
+}
+
+@-webkit-keyframes slideFromTop {
+  from {
+    top: -100vh;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes slideFromTop {
+  from {
+    top: -100vh;
+  }
+  to {
+    top: 0;
+  }
+}
+@-webkit-keyframes slideFromBottom {
+  from {
+    top: 100vh;
+  }
+  to {
+    top: 0;
+  }
+}
+@keyframes slideFromBottom {
+  from {
+    top: 100vh;
+  }
+  to {
+    top: 0;
+  }
+}
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.site-nav {
+  padding-top: 26px;
 }

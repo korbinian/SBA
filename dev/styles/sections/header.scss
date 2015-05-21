@@ -1,8 +1,9 @@
 .site-header {
 	background: $white;
 	border-bottom: 1px solid black;
-	position: fixed;
+	sposition: fixed;
 	width: 100%;
+	sz-index: 9999;
 	@include clearfix;
 	* {
 		line-height: 25px;
