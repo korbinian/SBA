@@ -116,8 +116,8 @@
 }
 
 .page-project .site-content {
-	padding-top: 26px;
-	height: calc(100vh - 26px);
+	spadding-top: 26px;
+	sheight: calc(100vh - 26px);
 	background: $black;
 	color: $white;
 }
@@ -278,48 +278,89 @@ main {
 }
 
 [ui-view].ng-enter, [ui-view].ng-leave {
-	transition: all 1s ease-in-out;
+	transition: all $d ease-in-out;
 }
 
-[ui-view].ng-leave {
-	display: none;
-}
 
-.news.from-projects,
-.news.from-profile,
-.news.from-contact {
-	animation-duration: 1s;
-  	animation-name: slideFromTop;
 
-}
 
-.projects.from-news {
-	animation-duration: 1s;
-  	animation-name: slideFromBottom;
-}
-.projects.from-profile,
-.projects.from-contact {
-	animation-duration: 1s;
+.page-news.from-projects,
+.page-news.from-profile,
+.page-news.from-contact {
+	animation-duration: $d;
   	animation-name: slideFromTop;
 }
 
-.profile.from-news,
-.profile.from-projects {
-	animation-duration: 1s;
+.page-projects.from-news {
+	animation-duration: $d;
   	animation-name: slideFromBottom;
 }
-
-.profile.from-contact {
-	animation-duration: 1s;
+.page-projects.from-profile,
+.page-projects.from-contact {
+	animation-duration: $d;
   	animation-name: slideFromTop;
 }
 
-.contact.from-news,
-.contact.from-projects,
-.contact.from-profile {
-	animation-duration: 1s;
+.page-profile.from-news,
+.page-profile.from-projects {
+	animation-duration: $d;
   	animation-name: slideFromBottom;
 }
+
+.page-profile.from-contact {
+	animation-duration: $d;
+  	animation-name: slideFromTop;
+}
+
+.page-contact.from-news,
+.page-contact.from-projects,
+.page-contact.from-profile {
+	animation-duration: $d;
+  	animation-name: slideFromBottom;
+}
+
+
+.ng-leave {
+	animation-duration: $d;
+  	animation-name: slideToTop !important;
+  	pointer-events: none;
+}
+
+.news {
+	.page-projects.ng-leave, 
+	.page-profile.ng-leave, 
+	.page-contact.ng-leave {
+		animation-duration: $d;
+		animation-name: slideToBottom !important;
+	}
+}
+
+.projects {
+	.page-profile.ng-leave, 
+	.page-contact.ng-leave {
+		animation-duration: $d;
+		animation-name: slideToBottom !important;
+	}
+}
+
+.profile {
+	.page-contact.ng-leave {
+		animation-duration: $d;
+		animation-name: slideToBottom !important;
+	}
+}
+
+
+
+
+
+.ng-enter {
+	sbackground: white;
+	z-index: 999999999;
+	pointer-events: none;
+}
+
+
 
 @keyframes slideFromTop {
   from {
@@ -331,6 +372,16 @@ main {
   }
 }
 
+@keyframes slideToTop {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -100vh;
+  }
+}
+
 @keyframes slideFromBottom {
   from {
     top: 100vh;
@@ -338,6 +389,27 @@ main {
 
   to {
     top: 0;
+  }
+}
+
+@keyframes slideToBottom {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 100vh;
+  }
+}
+
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
   }
 }
 
@@ -353,3 +425,4 @@ main {
 .site-nav {
 	padding-top: 26px;
 }
+

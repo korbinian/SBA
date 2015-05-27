@@ -436,8 +436,8 @@ ul li, ol li {
 }
 
 .page-project .site-content {
-  padding-top: 26px;
-  height: calc(100vh - 26px);
+  spadding-top: 26px;
+  sheight: calc(100vh - 26px);
   background: #000;
   color: #fff;
 }
@@ -604,56 +604,90 @@ main {
           transition: all 1s ease-in-out;
 }
 
-[ui-view].ng-leave {
-  display: none;
-}
-
-.news.from-projects,
-.news.from-profile,
-.news.from-contact {
+.page-news.from-projects,
+.page-news.from-profile,
+.page-news.from-contact {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-name: slideFromTop;
           animation-name: slideFromTop;
 }
 
-.projects.from-news {
+.page-projects.from-news {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-name: slideFromBottom;
           animation-name: slideFromBottom;
 }
 
-.projects.from-profile,
-.projects.from-contact {
+.page-projects.from-profile,
+.page-projects.from-contact {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-name: slideFromTop;
           animation-name: slideFromTop;
 }
 
-.profile.from-news,
-.profile.from-projects {
+.page-profile.from-news,
+.page-profile.from-projects {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-name: slideFromBottom;
           animation-name: slideFromBottom;
 }
 
-.profile.from-contact {
+.page-profile.from-contact {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-name: slideFromTop;
           animation-name: slideFromTop;
 }
 
-.contact.from-news,
-.contact.from-projects,
-.contact.from-profile {
+.page-contact.from-news,
+.page-contact.from-projects,
+.page-contact.from-profile {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-name: slideFromBottom;
           animation-name: slideFromBottom;
+}
+
+.ng-leave {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: slideToTop !important;
+          animation-name: slideToTop !important;
+  pointer-events: none;
+}
+
+.news .page-projects.ng-leave,
+.news .page-profile.ng-leave,
+.news .page-contact.ng-leave {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: slideToBottom !important;
+          animation-name: slideToBottom !important;
+}
+
+.projects .page-profile.ng-leave,
+.projects .page-contact.ng-leave {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: slideToBottom !important;
+          animation-name: slideToBottom !important;
+}
+
+.profile .page-contact.ng-leave {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: slideToBottom !important;
+          animation-name: slideToBottom !important;
+}
+
+.ng-enter {
+  sbackground: white;
+  z-index: 999999999;
+  pointer-events: none;
 }
 
 @-webkit-keyframes slideFromTop {
@@ -673,6 +707,22 @@ main {
     top: 0;
   }
 }
+@-webkit-keyframes slideToTop {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100vh;
+  }
+}
+@keyframes slideToTop {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100vh;
+  }
+}
 @-webkit-keyframes slideFromBottom {
   from {
     top: 100vh;
@@ -687,6 +737,38 @@ main {
   }
   to {
     top: 0;
+  }
+}
+@-webkit-keyframes slideToBottom {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100vh;
+  }
+}
+@keyframes slideToBottom {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100vh;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 .site-header {

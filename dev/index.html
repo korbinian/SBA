@@ -25,9 +25,12 @@
 
 	</head>
 	<body>
+		<div ng-controller="viewController" class=" {{bla}} ">
 		
-		<div class="page {{ pageClass }} {{'from-' + fromState.name}} {{toState.name}}" ui-view ng-controller="viewController">
+		<div class="page {{ pageClass }} {{'from-' + fromState.name}} {{'to-' + toState.name}} "  ui-view >
 			
+
+		</div>
 
 		</div>
 
