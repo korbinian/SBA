@@ -1,0 +1,38 @@
+.projects {
+	@include clearfix;
+	.project {
+		max-width: 437px;
+		float: left;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		@include clearfix;
+		img {
+			max-width: 100%;
+			margin: 0;
+		}
+	}
+	.project-number {
+		@include font-l;
+		float: left;
+		width: 25%;
+	}
+	.project-title, .project-location, .project-year {
+		text-transform: uppercase;
+		float: right;
+		width: 75%;
+	}
+}
+
+.project a img {
+	transition: opacity .2s;
+}
+
+.project a:hover img {
+	opacity: 0;
+	transition: opacity .2s;
+}
+
+.project-info {
+	padding: 5px 0;
+	@include clearfix;
+}

@@ -1,28 +1,21 @@
 /*--------------------------------------------------------------------------------------------------
-		SETUP
---------------------------------------------------------------------------------------------------*/
-/*--------------------------------------------------------------------------------------------------
 		GLOBAL STYLES
+--------------------------------------------------------------------------------------------------*/
+/*	RESET
 --------------------------------------------------------------------------------------------------*/
 html {
   box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
 body {
   margin: 0;
   overflow-x: hidden;
-  sbackground: #000;
-  scolor: #fff;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
@@ -34,40 +27,8 @@ audio, video {
   vertical-align: baseline;
 }
 
-b, strong {
-  font-weight: bold;
-}
-
-small {
-  font-size: 11px;
-}
-
-sub, sup {
-  font-size: 11px;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-img {
-  border: 0;
-  height: auto;
-  max-width: 100%;
-  vertical-align: bottom;
-}
-
-figure {
-  margin: 0;
-}
-
+/*	TYPOGRAPHY
+--------------------------------------------------------------------------------------------------*/
 @font-face {
   font-family: 'LetterGothicStd-Regular';
   src: url("fonts/LetterGothicStd_gdi.eot");
@@ -109,6 +70,28 @@ a:active, a:hover {
   outline: 0;
 }
 
+b, strong {
+  font-weight: bold;
+}
+
+small, sub, sup {
+  font-size: 11px;
+}
+
+sub, sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
 ::-moz-selection {
   color: #fff;
   background: #000;
@@ -130,6 +113,27 @@ a:active, a:hover {
   margin-bottom: 16px;
 }
 
+.download {
+  text-transform: uppercase;
+  display: block;
+}
+
+/*	IMAGES
+--------------------------------------------------------------------------------------------------*/
+img {
+  border: 0;
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+  margin-bottom: 16px;
+}
+
+figure {
+  margin: 0;
+}
+
+/*	LISTS
+--------------------------------------------------------------------------------------------------*/
 ul, ol {
   margin: 0;
   padding: 0;
@@ -140,17 +144,270 @@ ul li, ol li {
   padding: 0;
 }
 
+/*	LAYOUT
+--------------------------------------------------------------------------------------------------*/
 .page {
-  position: relative;
-  top: 26px;
+  position: absolute;
+  top: 0;
 }
 
 .row {
   padding: 0 10px;
 }
 
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.site-nav {
+  padding-top: 26px;
+}
+
+.site-content {
+  width: 100vw;
+  min-height: calc(100vh - 56px);
+}
+
+.page-home .site-content {
+  min-height: 100vh;
+}
+
+/*  ANIMATIONS
+--------------------------------------------------------------------------------------------------*/
+@-webkit-keyframes slideFromTop {
+  from {
+    top: -100vh;
+  }
+  to {
+    top: 0;
+  }
+}
+@keyframes slideFromTop {
+  from {
+    top: -100vh;
+  }
+  to {
+    top: 0;
+  }
+}
+@-webkit-keyframes slideToTop {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100vh;
+  }
+}
+@keyframes slideToTop {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100vh;
+  }
+}
+@-webkit-keyframes slideFromBottom {
+  from {
+    top: 100vh;
+  }
+  to {
+    top: 0;
+  }
+}
+@keyframes slideFromBottom {
+  from {
+    top: 100vh;
+  }
+  to {
+    top: 0;
+  }
+}
+@-webkit-keyframes slideToBottom {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100vh;
+  }
+}
+@keyframes slideToBottom {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100vh;
+  }
+}
+@-webkit-keyframes slideFromRight {
+  from {
+    left: 100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes slideFromRight {
+  from {
+    left: 100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+@-webkit-keyframes slideToRight {
+  from {
+    left: 0;
+  }
+  to {
+    top: 100vw;
+  }
+}
+@keyframes slideToRight {
+  from {
+    left: 0;
+  }
+  to {
+    top: 100vw;
+  }
+}
+@-webkit-keyframes slideFromLeft {
+  from {
+    left: -100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes slideFromLeft {
+  from {
+    left: -100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+@-webkit-keyframes slideToLeft {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100vw;
+  }
+}
+@keyframes slideToLeft {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100vw;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*	PAGE TRANSITIONS
+--------------------------------------------------------------------------------------------------*/
+/* tells angular how long the animation shall occur */
+.page.ng-enter, .page.ng-leave {
+  -webkit-transition: all 1s ease-in-out;
+          transition: all 1s ease-in-out;
+}
+
+/* entering content */
+.page.ng-enter {
+  z-index: 10;
+}
+
+.page-home.from-news,
+.page-home.from-projects,
+.page-home.from-profile,
+.page-home.from-contact,
+.page-news.from-projects,
+.page-news.from-profile,
+.page-news.from-contact,
+.page-projects.from-profile,
+.page-projects.from-contact,
+.page-profile.from-contact {
+  -webkit-animation: slideFromTop 1s;
+          animation: slideFromTop 1s;
+}
+
+.page-projects.from-home,
+.page-projects.from-news,
+.page-profile.from-news,
+.page-profile.from-projects,
+.page-contact.from-news,
+.page-contact.from-projects,
+.page-contact.from-profile {
+  -webkit-animation: slideFromBottom 1s;
+          animation: slideFromBottom 1s;
+}
+
+/* leaving content */
+.page.ng-leave {
+  -webkit-animation: slideToTop 1s !important;
+          animation: slideToTop 1s !important;
+}
+
+.home .page-news.ng-leave,
+.home .page-projects.ng-leave,
+.home .page-profile.ng-leave,
+.home .page-contact.ng-leave,
+.news .page-projects.ng-leave,
+.news .page-profile.ng-leave,
+.news .page-contact.ng-leave,
+.projects .page-profile.ng-leave,
+.projects .page-contact.ng-leave,
+.profile .page-contact.ng-leave {
+  -webkit-animation: slideToBottom 1s !important;
+          animation: slideToBottom 1s !important;
+}
+
+.page-project.ng-enter {
+  -webkit-animation: slideFromRight 1s !important;
+          animation: slideFromRight 1s !important;
+}
+
+.page-project.ng-leave {
+  -webkit-animation: slideToLeft 1s !important;
+          animation: slideToLeft 1s !important;
+}
+
 /*--------------------------------------------------------------------------------------------------
-		MODULES
+	MODULES
 --------------------------------------------------------------------------------------------------*/
 .accordion {
   border-top: 1px solid;
@@ -217,11 +474,7 @@ ul li, ol li {
 }
 
 #next-title {
-  opacity: 0;
   position: absolute;
-  color: #fff;
-  -webkit-transition: opacity .2s;
-          transition: opacity .2s;
   font-size: 25px;
   line-height: 30px;
   font-weight: bold;
@@ -233,18 +486,20 @@ ul li, ol li {
 }
 
 #next:hover #next-title {
-  sopacity: 1;
   display: block;
-  -webkit-transition: opacity 1s;
-          transition: opacity 1s;
 }
 
 #next {
   cursor: none;
 }
 
+.ng-leave #next {
+  -webkit-animation: fadeOut 1s;
+          animation: fadeOut 1s;
+}
+
 /*--------------------------------------------------------------------------------------------------
-		SECTIONS
+	SECTIONS
 --------------------------------------------------------------------------------------------------*/
 .site-header {
   background: #fff;
@@ -304,14 +559,13 @@ ul li, ol li {
 }
 
 /*--------------------------------------------------------------------------------------------------
-		PAGES
+	PAGES
 --------------------------------------------------------------------------------------------------*/
-.page-home {
-  background: #000;
-  color: #fff;
-}
 .page-home .site-nav {
   display: none;
+}
+.page-home .site-content {
+  padding-top: 26px;
 }
 
 .news .news-item-date {
@@ -322,46 +576,6 @@ ul li, ol li {
   float: left;
 }
 
-.page-project .project {
-  width: 768px;
-  padding-bottom: 100px;
-}
-
-.project-details {
-  margin-bottom: 16px;
-}
-.project-details h3 {
-  text-transform: uppercase;
-  display: inline-block;
-  margin-right: 10px;
-}
-.project-details p {
-  display: inline-block;
-  margin: 0;
-}
-
-/*
-
-.page-project .wrapper {
-	display: table;
-	width: 100%;
-	.table-row	{
-		display: table-row;
-	}
-	.project {
-		display: table-cell;
-	}
-	.next {
-		display: table-cell;
-		vertical-align: top;
-	}
-} */
-/*--------------------------------------------------------------------------------------------------
-		EXTERNAL LIBRARIES
---------------------------------------------------------------------------------------------------*/
-.projects {
-  smargin-left: -10px;
-}
 .projects:after {
   content: "";
   display: table;
@@ -372,7 +586,6 @@ ul li, ol li {
   float: left;
   margin-right: 10px;
   margin-bottom: 10px;
-  background: #000;
 }
 .projects .project:after {
   content: "";
@@ -397,15 +610,6 @@ ul li, ol li {
   width: 75%;
 }
 
-.download {
-  text-transform: uppercase;
-  display: block;
-}
-
-.site-content img {
-  margin-bottom: 16px;
-}
-
 .project a img {
   -webkit-transition: opacity .2s;
           transition: opacity .2s;
@@ -419,7 +623,6 @@ ul li, ol li {
 
 .project-info {
   padding: 5px 0;
-  background: #fff;
 }
 .project-info:after {
   content: "";
@@ -427,19 +630,22 @@ ul li, ol li {
   clear: both;
 }
 
-.project a {
-  background: #fff;
+.page-project .project {
+  width: 768px;
+  padding-bottom: 100px;
 }
 
-.project a:visited .project-info {
-  color: grey;
+.project-details {
+  margin-bottom: 16px;
 }
-
-.page-project .site-content {
-  spadding-top: 26px;
-  sheight: calc(100vh - 26px);
-  background: #000;
-  color: #fff;
+.project-details h3 {
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 10px;
+}
+.project-details p {
+  display: inline-block;
+  margin: 0;
 }
 
 .wrapper {
@@ -459,326 +665,4 @@ ul li, ol li {
   -webkit-flex: auto;
       -ms-flex: auto;
           flex: auto;
-}
-
-.project {
-  float: left;
-}
-
-.view {
-  width: 100%;
-  padding-left: 1em;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.slideLeft.ng-enter, .slideLeft.ng-leave, .slideRight.ng-enter, .slideRight.ng-leave {
-  -webkit-transition: all 1s;
-  transition: all 1s;
-}
-
-.slideLeft.ng-enter {
-  left: 100%;
-}
-
-.slideLeft.ng-enter.ng-enter-active {
-  left: 0;
-}
-
-.slideLeft.ng-leave.ng-leave-active {
-  left: -100%;
-}
-
-.slideRight.ng-enter {
-  left: -100%;
-}
-
-.slideRight.ng-enter.ng-enter-active {
-  left: 0;
-}
-
-.slideRight.ng-leave.ng-leave-active {
-  left: 100%;
-}
-
-/*
-
-[ui-view].ng-enter, [ui-view].ng-leave {
-	transition: all 5s;
-}
-
-[ui-view].ng-enter main {
-	opacity: 0;
-	transition: all 5s;
-}
-
-[ui-view].ng-enter-active main {
-	opacity: 1;
-	transition: all 5s;
-}
-*/
-/*
-
-[ui-view].ng-enter, [ui-view].ng-leave {
-	transition: all 1s ease-in-out;
-}
-
-.page {
-	position: absolute;
-	top: 0;
-	spadding-top: 26px;
-	width: 100vw;
-}
-
-main {
-	height: calc(100vh - 26px);
-	position: relative;
-	top: 26px;
-}
-
-/*
-[ui-view].ng-enter {
-  opacity: 0;
-  transform:scale3d(0.5, 0.5, 0.5);
-}
-
-[ui-view].ng-enter-active {
-  opacity: 1;
-  transform:scale3d(1, 1, 1);
-}
-
-[ui-view].ng-leave {
-  opacity: 1;
-  transform:translate3d(0, 0, 0);
-}
-
-[ui-view].ng-leave-active {
-  opacity: 0;
-  transform:translate3d(100px, 0, 0);
-}*/
-/*
-
-[ui-view].ng-enter { 
-	top: 100vh;
-	transition: all 1s; 
-}
-
-[ui-view].ng-enter-active { 
-	top: 0;
-	transition: all 1s; 
-}
-
-.page-home.ng-enter {
-	top: 0;
-}
-
-[ui-view].ng-leave { 
-	top: 0;
-	transition: all 1s; 
-}
-
-
-
-[ui-view].ng-leave-active  {
-	top: -100vh;
-	transition: all 1s;
-}
-*/
-.page {
-  position: absolute;
-  top: 0;
-}
-
-main {
-  width: 100vw;
-  height: 100vh;
-}
-
-.page-home main {
-  padding-top: 26px;
-}
-
-[ui-view].ng-enter, [ui-view].ng-leave {
-  -webkit-transition: all 1s ease-in-out;
-          transition: all 1s ease-in-out;
-}
-
-.page-news.from-projects,
-.page-news.from-profile,
-.page-news.from-contact {
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-name: slideFromTop;
-          animation-name: slideFromTop;
-}
-
-.page-projects.from-news {
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-name: slideFromBottom;
-          animation-name: slideFromBottom;
-}
-
-.page-projects.from-profile,
-.page-projects.from-contact {
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-name: slideFromTop;
-          animation-name: slideFromTop;
-}
-
-.page-profile.from-news,
-.page-profile.from-projects {
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-name: slideFromBottom;
-          animation-name: slideFromBottom;
-}
-
-.page-profile.from-contact {
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-name: slideFromTop;
-          animation-name: slideFromTop;
-}
-
-.page-contact.from-news,
-.page-contact.from-projects,
-.page-contact.from-profile {
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-name: slideFromBottom;
-          animation-name: slideFromBottom;
-}
-
-.ng-leave {
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-name: slideToTop !important;
-          animation-name: slideToTop !important;
-  pointer-events: none;
-}
-
-.news .page-projects.ng-leave,
-.news .page-profile.ng-leave,
-.news .page-contact.ng-leave {
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-name: slideToBottom !important;
-          animation-name: slideToBottom !important;
-}
-
-.projects .page-profile.ng-leave,
-.projects .page-contact.ng-leave {
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-name: slideToBottom !important;
-          animation-name: slideToBottom !important;
-}
-
-.profile .page-contact.ng-leave {
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-name: slideToBottom !important;
-          animation-name: slideToBottom !important;
-}
-
-.ng-enter {
-  sbackground: white;
-  z-index: 999999999;
-  pointer-events: none;
-}
-
-@-webkit-keyframes slideFromTop {
-  from {
-    top: -100vh;
-  }
-  to {
-    top: 0;
-  }
-}
-
-@keyframes slideFromTop {
-  from {
-    top: -100vh;
-  }
-  to {
-    top: 0;
-  }
-}
-@-webkit-keyframes slideToTop {
-  from {
-    top: 0;
-  }
-  to {
-    top: -100vh;
-  }
-}
-@keyframes slideToTop {
-  from {
-    top: 0;
-  }
-  to {
-    top: -100vh;
-  }
-}
-@-webkit-keyframes slideFromBottom {
-  from {
-    top: 100vh;
-  }
-  to {
-    top: 0;
-  }
-}
-@keyframes slideFromBottom {
-  from {
-    top: 100vh;
-  }
-  to {
-    top: 0;
-  }
-}
-@-webkit-keyframes slideToBottom {
-  from {
-    top: 0;
-  }
-  to {
-    top: 100vh;
-  }
-}
-@keyframes slideToBottom {
-  from {
-    top: 0;
-  }
-  to {
-    top: 100vh;
-  }
-}
-@-webkit-keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-}
-
-.site-nav {
-  padding-top: 26px;
 }

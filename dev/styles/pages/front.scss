@@ -1,7 +1,8 @@
 .page-home  {
-	background: $black;
-	color: $white;
 	.site-nav {
 		display: none;
+	}
+	.site-content {
+		padding-top: 26px;
 	}
 }

@@ -1,3 +1,6 @@
+/*	TYPOGRAPHY
+--------------------------------------------------------------------------------------------------*/
+
 @font-face {
 	font-family:'LetterGothicStd-Regular';
 	src: url('fonts/LetterGothicStd_gdi.eot');
@@ -44,6 +47,28 @@ a {
 	}
 }
 
+b, strong {
+	font-weight: $font-weight-bold;
+}
+
+small, sub, sup {
+	font-size: $font-size-s;
+}
+
+sub, sup {
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
 ::-moz-selection {
 	color: $white;
 	background: $black;
@@ -56,9 +81,16 @@ a {
 
 .intro, .intro * {
 	@include font-l;
-	
 }
 
 .site-content p {
 	margin-bottom: $line-height-m;
 }
+
+.download {
+	text-transform: uppercase;
+	display: block;
+}
+
+
+

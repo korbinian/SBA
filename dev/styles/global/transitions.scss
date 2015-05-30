@@ -1,0 +1,70 @@
+/*	PAGE TRANSITIONS
+--------------------------------------------------------------------------------------------------*/
+
+/* tells angular how long the animation shall occur */
+
+$d: 1s;
+
+.page.ng-enter, .page.ng-leave {
+	transition: all $d ease-in-out;
+}
+
+/* entering content */
+
+.page.ng-enter {
+	z-index: 10;
+}
+
+.page-home.from-news,
+.page-home.from-projects,
+.page-home.from-profile,
+.page-home.from-contact,
+
+.page-news.from-projects,
+.page-news.from-profile,
+.page-news.from-contact,
+.page-projects.from-profile,
+.page-projects.from-contact,
+.page-profile.from-contact, {
+	animation: slideFromTop $d;
+}
+
+.page-projects.from-home,
+.page-projects.from-news,
+.page-profile.from-news,
+.page-profile.from-projects,
+.page-contact.from-news,
+.page-contact.from-projects,
+.page-contact.from-profile {
+	animation: slideFromBottom $d;
+}
+
+/* leaving content */
+
+.page.ng-leave {
+	animation: slideToTop $d !important;
+}
+
+
+.home .page-news.ng-leave,
+.home .page-projects.ng-leave,
+.home .page-profile.ng-leave,
+.home .page-contact.ng-leave,
+
+.news .page-projects.ng-leave,
+.news .page-profile.ng-leave,
+.news .page-contact.ng-leave,
+.projects .page-profile.ng-leave,
+.projects .page-contact.ng-leave,
+.profile .page-contact.ng-leave {
+	animation: slideToBottom $d !important;
+}
+
+
+.page-project.ng-enter {
+	animation: slideFromRight $d !important;
+}
+
+.page-project.ng-leave {
+	animation: slideToLeft $d !important;
+}

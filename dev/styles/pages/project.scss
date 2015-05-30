@@ -16,20 +16,12 @@
 	}
 }
 
-/*
-
-.page-project .wrapper {
-	display: table;
-	width: 100%;
-	.table-row	{
-		display: table-row;
-	}
+.wrapper {
+	display: flex;
 	.project {
-		display: table-cell;
+		flex: 0 0 768px;
 	}
-	.next {
-		display: table-cell;
-		vertical-align: top;
+	#next {
+		flex: auto;
 	}
-} */
-
+}

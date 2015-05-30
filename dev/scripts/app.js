@@ -43,11 +43,13 @@ var sba = angular.module('sba', [
                 url: '/projects/022',
                 templateUrl: 'templates/projects/022.html',
                 controller: 'projectController',
+                bla: 'project'
             })
             .state('project055', {
                 url: '/projects/055',
                 templateUrl: 'templates/projects/055.html',
                 controller: 'projectController',
+                bla: 'project'
             })
 
             .state('profile', {
