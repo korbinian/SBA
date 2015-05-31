@@ -21,14 +21,14 @@ var sba = angular.module('sba', [
                 url: '/',
                 templateUrl: 'templates/pages/home.html',
                 controller: 'homeController',
-                bla: 'home'
+                loc: 'home'
             })
 
             .state('news', {
                 url: '/news',
                 templateUrl: 'templates/pages/news.html',
                 controller: 'newsController',
-                bla: 'news'
+                loc: 'news'
             })
 
 
@@ -36,34 +36,34 @@ var sba = angular.module('sba', [
                 url: '/projects',
                 templateUrl: 'templates/pages/projects.html',
                 controller: 'projectsController',
-                bla: 'projects'
+                loc: 'projects'
             })
 
             .state('project022', {
                 url: '/projects/022',
                 templateUrl: 'templates/projects/022.html',
                 controller: 'projectController',
-                bla: 'project'
+                loc: 'project'
             })
             .state('project055', {
                 url: '/projects/055',
                 templateUrl: 'templates/projects/055.html',
                 controller: 'projectController',
-                bla: 'project'
+                loc: 'project'
             })
 
             .state('profile', {
                 url: '/profile',
                 templateUrl: 'templates/pages/profile.html',
                 controller: 'profileController',
-                bla: 'profile'
+                loc: 'profile'
             })
 
             .state('contact', {
                 url: '/contact',
                 templateUrl: 'templates/pages/contact.html',
                 controller: 'contactController',
-                bla: 'contact'
+                loc: 'contact'
             })
     }])
     
@@ -89,7 +89,7 @@ var sba = angular.module('sba', [
 // uses angular ui
 
 .controller('CarouselDemoCtrl', function ($scope) {
-    $scope.myInterval = 1000;
+    $scope.myInterval = 3000;
     var slides = $scope.slides = [
         { image: 'images/slider/slider-1.jpg' },
         { image: 'images/slider/slider-2.jpg' },
@@ -128,8 +128,8 @@ var sba = angular.module('sba', [
     $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
         $scope.fromState = fromState;
         $scope.toState = toState;
-        $scope.bla = $state.current.bla;
-        console.log($scope.bla);
+        $scope.loc = $state.current.loc;
+        console.log($scope.loc);
     });
 
     

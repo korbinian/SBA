@@ -14,6 +14,18 @@ html {
 body {
 	margin: 0;
 	overflow-x: hidden;
+	background: $black;
+	color: $white;
+}
+
+main {
+	background: $white;
+	color: $black;
+}
+
+.row {
+	padding: 0 20px 0 10px;
+	position: relative;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
@@ -24,3 +36,26 @@ audio, video {
 	display: inline-block;
 	vertical-align: baseline;
 }
+
+ul, ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+img {
+	border: 0;
+	height: auto;
+	max-width: 100%;
+	vertical-align: bottom;
+	margin-bottom: $line-height-m;
+}
+
+figure {
+	margin: 0;
+}
+

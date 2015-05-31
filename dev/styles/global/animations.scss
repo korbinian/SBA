@@ -3,41 +3,41 @@
 
 @keyframes slideFromTop {
     from { top: -100vh }
-    to   { top: 0      }
+    to   { top: 0 }
 }
 
 @keyframes slideToTop {
-    from { top: 0      }
+    from { top: 0 }
     to   { top: -100vh }
 }
 
 @keyframes slideFromBottom {
     from { top: 100vh }
-    to   { top: 0     }
+    to   { top: 0 }
 }
 
 @keyframes slideToBottom {
-    from { top: 0     }
+    from { top: 0 }
     to   { top: 100vh }
 }
 
 @keyframes slideFromRight {
-    from { left: 100vw     }
+    from { left: 100vw }
     to   { left: 0 }
 }
 
 @keyframes slideToRight {
-    from { left: 0     }
+    from { left: 0 }
     to   { top: 100vw }
 }
 
 @keyframes slideFromLeft {
-    from { left: -100vw     }
+    from { left: -100vw }
     to   { left: 0 }
 }
 
 @keyframes slideToLeft {
-    from { left: 0     }
+    from { left: 0 }
     to   { left: -100vw }
 }
 

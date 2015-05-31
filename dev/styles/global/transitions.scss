@@ -1,6 +1,11 @@
 /*	PAGE TRANSITIONS
 --------------------------------------------------------------------------------------------------*/
 
+.page {
+	position: absolute; 
+	top: 0;
+}
+
 /* tells angular how long the animation shall occur */
 
 $d: 1s;
@@ -11,8 +16,15 @@ $d: 1s;
 
 /* entering content */
 
+
 .page.ng-enter {
 	z-index: 10;
+	height: 100vh;
+	overflow-y: hidden;
+}
+
+.page.ng-enter.from- {
+	animation: fadeIn $d !important;
 }
 
 .page-home.from-news,
@@ -29,8 +41,11 @@ $d: 1s;
 	animation: slideFromTop $d;
 }
 
+
 .page-projects.from-home,
 .page-projects.from-news,
+.page-projects.from-project055,
+.page-projects.from-project022,
 .page-profile.from-news,
 .page-profile.from-projects,
 .page-contact.from-news,
@@ -43,6 +58,10 @@ $d: 1s;
 
 .page.ng-leave {
 	animation: slideToTop $d !important;
+}
+
+.page-home.ng-leave .site-content {
+	animation: fadeOut $d !important;
 }
 
 
@@ -67,4 +86,9 @@ $d: 1s;
 
 .page-project.ng-leave {
 	animation: slideToLeft $d !important;
+}
+
+.project .page-projects.ng-leave {
+	animation: slideToBottom $d !important;
+	z-index: 9999;
 }

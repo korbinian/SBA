@@ -1,38 +1,26 @@
 <!doctype html>
 <html ng-app="sba">
 	<head>
-
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<title>Schnadenberger Brünjes Architekten</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
 		<link rel="stylesheet" href="styles/style.css">
-
 		<script src="scripts/vendor/jquery-2.1.4.min.js"></script>
-
 		<script src="scripts/vendor/angular.min.js"></script>
 		<script src="scripts/vendor/angular-animate.min.js"></script>
 		<script src="scripts/vendor/angular-touch.min.js"></script>
 		<script src="scripts/vendor/angular-route.min.js"></script>
 		<script src="scripts/vendor/angular-ui-router.min.js"></script>
 		<script src="scripts/vendor/ui-bootstrap-custom-tpls-0.13.0.min.js"></script>
-
 		<script src="scripts/script.js"></script>
-
-
-
 	</head>
 	<body>
-		<div ng-controller="viewController" class=" {{bla}} ">
-		
-		<div class="page {{ pageClass }} {{'from-' + fromState.name}} {{'to-' + toState.name}} "  ui-view >
-			
+		<div ng-controller="viewController" class=" {{loc}} ">	
+			<div class="page {{ pageClass }} {{'from-' + fromState.name}} {{'to-' + toState.name}} " ui-view >
 
+			</div>
 		</div>
-
-		</div>
-
 	</body>
 </html>

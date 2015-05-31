@@ -16,6 +16,18 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
+  background: #000;
+  color: #fff;
+}
+
+main {
+  background: #fff;
+  color: #000;
+}
+
+.row {
+  padding: 0 20px 0 10px;
+  position: relative;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
@@ -25,6 +37,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 audio, video {
   display: inline-block;
   vertical-align: baseline;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul li, ol li {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+  margin-bottom: 16px;
+}
+
+figure {
+  margin: 0;
 }
 
 /*	TYPOGRAPHY
@@ -62,9 +96,13 @@ a {
   background-color: transparent;
   text-decoration: none;
   color: #000;
+  -webkit-transition: color .5s;
+          transition: color .5s;
 }
 a:hover {
   color: #0000ff;
+  -webkit-transition: color .2s;
+          transition: color .2s;
 }
 a:active, a:hover {
   outline: 0;
@@ -116,64 +154,6 @@ sub {
 .download {
   text-transform: uppercase;
   display: block;
-}
-
-/*	IMAGES
---------------------------------------------------------------------------------------------------*/
-img {
-  border: 0;
-  height: auto;
-  max-width: 100%;
-  vertical-align: bottom;
-  margin-bottom: 16px;
-}
-
-figure {
-  margin: 0;
-}
-
-/*	LISTS
---------------------------------------------------------------------------------------------------*/
-ul, ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-ul li, ol li {
-  margin: 0;
-  padding: 0;
-}
-
-/*	LAYOUT
---------------------------------------------------------------------------------------------------*/
-.page {
-  position: absolute;
-  top: 0;
-}
-
-.row {
-  padding: 0 10px;
-}
-
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-}
-
-.site-nav {
-  padding-top: 26px;
-}
-
-.site-content {
-  width: 100vw;
-  min-height: calc(100vh - 56px);
-}
-
-.page-home .site-content {
-  min-height: 100vh;
 }
 
 /*  ANIMATIONS
@@ -340,6 +320,11 @@ ul li, ol li {
 }
 /*	PAGE TRANSITIONS
 --------------------------------------------------------------------------------------------------*/
+.page {
+  position: absolute;
+  top: 0;
+}
+
 /* tells angular how long the animation shall occur */
 .page.ng-enter, .page.ng-leave {
   -webkit-transition: all 1s ease-in-out;
@@ -349,6 +334,13 @@ ul li, ol li {
 /* entering content */
 .page.ng-enter {
   z-index: 10;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.page.ng-enter.from- {
+  -webkit-animation: fadeIn 1s !important;
+          animation: fadeIn 1s !important;
 }
 
 .page-home.from-news,
@@ -367,6 +359,8 @@ ul li, ol li {
 
 .page-projects.from-home,
 .page-projects.from-news,
+.page-projects.from-project055,
+.page-projects.from-project022,
 .page-profile.from-news,
 .page-profile.from-projects,
 .page-contact.from-news,
@@ -380,6 +374,11 @@ ul li, ol li {
 .page.ng-leave {
   -webkit-animation: slideToTop 1s !important;
           animation: slideToTop 1s !important;
+}
+
+.page-home.ng-leave .site-content {
+  -webkit-animation: fadeOut 1s !important;
+          animation: fadeOut 1s !important;
 }
 
 .home .page-news.ng-leave,
@@ -404,6 +403,12 @@ ul li, ol li {
 .page-project.ng-leave {
   -webkit-animation: slideToLeft 1s !important;
           animation: slideToLeft 1s !important;
+}
+
+.project .page-projects.ng-leave {
+  -webkit-animation: slideToBottom 1s !important;
+          animation: slideToBottom 1s !important;
+  z-index: 9999;
 }
 
 /*--------------------------------------------------------------------------------------------------
@@ -465,7 +470,6 @@ ul li, ol li {
   display: block;
   position: absolute;
   z-index: 99999;
-  sbackground: red;
   top: 0;
   right: 0;
   bottom: 0;
@@ -504,9 +508,7 @@ ul li, ol li {
 .site-header {
   background: #fff;
   border-bottom: 1px solid black;
-  sposition: fixed;
   width: 100%;
-  sz-index: 9999;
 }
 .site-header:after {
   content: "";
@@ -529,6 +531,14 @@ ul li, ol li {
   color: #0000ff;
 }
 
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
 .site-nav:after {
   content: "";
   display: table;
@@ -548,26 +558,15 @@ ul li, ol li {
   color: blue;
 }
 
-.site-nav {
-  background: white;
-}
-
 .site-content {
-  sbackground: #fff;
-  scolor: #000;
-  sheight: calc(100vh - 26px - 30px);
+  width: 100vw;
+  padding-top: 26px;
+  min-height: 100vh;
 }
 
 /*--------------------------------------------------------------------------------------------------
 	PAGES
 --------------------------------------------------------------------------------------------------*/
-.page-home .site-nav {
-  display: none;
-}
-.page-home .site-content {
-  padding-top: 26px;
-}
-
 .news .news-item-date {
   float: left;
   width: 120px;
@@ -576,21 +575,23 @@ ul li, ol li {
   float: left;
 }
 
-.projects:after {
-  content: "";
-  display: table;
-  clear: both;
+.projects {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  sjustify-content: space-between;
 }
 .projects .project {
-  max-width: 437px;
-  float: left;
-  margin-right: 10px;
+  -webkit-flex-basis: 20%;
+      -ms-flex-preferred-size: 20%;
+          flex-basis: 20%;
   margin-bottom: 10px;
-}
-.projects .project:after {
-  content: "";
-  display: table;
-  clear: both;
+  padding-right: 10px;
+  smax-width: 200px;
 }
 .projects .project img {
   max-width: 100%;
@@ -665,4 +666,13 @@ ul li, ol li {
   -webkit-flex: auto;
       -ms-flex: auto;
           flex: auto;
+}
+
+.page-project .site-content {
+  background: #000;
+  color: #fff;
+}
+
+.page-project.ng-enter {
+  sz-index: -1;
 }
