@@ -23,7 +23,11 @@ $d: 1s;
 	overflow-y: hidden;
 }
 
-.page.ng-enter.from- {
+.project .page.ng-enter {
+	height: auto;
+}
+
+.page.ng-enter.from-  {
 	animation: fadeIn $d !important;
 }
 
@@ -84,6 +88,11 @@ $d: 1s;
 	animation: slideFromRight $d !important;
 }
 
+.page-project.from-projects.ng-enter {
+	animation: fadeIn $d !important;
+}
+
+
 .page-project.ng-leave {
 	animation: slideToLeft $d !important;
 }
@@ -91,4 +100,12 @@ $d: 1s;
 .project .page-projects.ng-leave {
 	animation: slideToBottom $d !important;
 	z-index: 9999;
+}
+
+.projects .page-project.ng-leave {
+	animation: none $d !important;
+}
+
+.projects .page-project.ng-leave .site-content {
+	animation: fadeOut $d !important;
 }

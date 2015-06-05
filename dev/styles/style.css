@@ -20,7 +20,10 @@ body {
   color: #fff;
 }
 
-main {
+.page-news,
+.page-projects,
+.page-profile,
+.page-contact {
   background: #fff;
   color: #000;
 }
@@ -28,6 +31,11 @@ main {
 .row {
   padding: 0 20px 0 10px;
   position: relative;
+}
+
+.site-content {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
@@ -338,6 +346,10 @@ sub {
   overflow-y: hidden;
 }
 
+.project .page.ng-enter {
+  height: auto;
+}
+
 .page.ng-enter.from- {
   -webkit-animation: fadeIn 1s !important;
           animation: fadeIn 1s !important;
@@ -400,6 +412,11 @@ sub {
           animation: slideFromRight 1s !important;
 }
 
+.page-project.from-projects.ng-enter {
+  -webkit-animation: fadeIn 1s !important;
+          animation: fadeIn 1s !important;
+}
+
 .page-project.ng-leave {
   -webkit-animation: slideToLeft 1s !important;
           animation: slideToLeft 1s !important;
@@ -409,6 +426,16 @@ sub {
   -webkit-animation: slideToBottom 1s !important;
           animation: slideToBottom 1s !important;
   z-index: 9999;
+}
+
+.projects .page-project.ng-leave {
+  -webkit-animation: none 1s !important;
+          animation: none 1s !important;
+}
+
+.projects .page-project.ng-leave .site-content {
+  -webkit-animation: fadeOut 1s !important;
+          animation: fadeOut 1s !important;
 }
 
 /*--------------------------------------------------------------------------------------------------
@@ -434,11 +461,16 @@ sub {
 }
 
 .panel-collapse {
-  display: none;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height .5s;
+          transition: height .5s;
 }
 
 .panel-collapse.in {
-  display: block;
+  height: auto;
+  -webkit-transition: height .5s;
+          transition: height .5s;
 }
 
 .carousel-inner {
@@ -575,7 +607,7 @@ sub {
   float: left;
 }
 
-.projects {
+.site-content .projects {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -583,21 +615,19 @@ sub {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  sjustify-content: space-between;
 }
-.projects .project {
+.site-content .projects .project {
   -webkit-flex-basis: 20%;
       -ms-flex-preferred-size: 20%;
           flex-basis: 20%;
   margin-bottom: 10px;
-  padding-right: 10px;
-  smax-width: 200px;
+  border-right: 10px solid #fff;
 }
-.projects .project img {
+.site-content .projects .project img {
   max-width: 100%;
   margin: 0;
 }
-.projects .project-number {
+.site-content .projects .project-number {
   font-size: 25px;
   line-height: 30px;
   font-weight: bold;
@@ -605,7 +635,7 @@ sub {
   float: left;
   width: 25%;
 }
-.projects .project-title, .projects .project-location, .projects .project-year {
+.site-content .projects .project-title, .site-content .projects .project-location, .site-content .projects .project-year {
   text-transform: uppercase;
   float: right;
   width: 75%;
@@ -617,7 +647,7 @@ sub {
 }
 
 .project a:hover img {
-  opacity: 0;
+  opacity: .1;
   -webkit-transition: opacity .2s;
           transition: opacity .2s;
 }
@@ -629,6 +659,10 @@ sub {
   content: "";
   display: table;
   clear: both;
+}
+
+.project-thumb {
+  background: #000;
 }
 
 .page-project .project {
@@ -671,8 +705,4 @@ sub {
 .page-project .site-content {
   background: #000;
   color: #fff;
-}
-
-.page-project.ng-enter {
-  sz-index: -1;
 }

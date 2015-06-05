@@ -18,7 +18,10 @@ body {
 	color: $white;
 }
 
-main {
+.page-news,
+.page-projects,
+.page-profile,
+.page-contact {
 	background: $white;
 	color: $black;
 }
@@ -26,6 +29,10 @@ main {
 .row {
 	padding: 0 20px 0 10px;
 	position: relative;
+}
+
+.site-content {
+	transform: translate3d(0,0,0);
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {

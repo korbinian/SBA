@@ -14,9 +14,13 @@
 }
 
 .panel-collapse {
-	display: none;
+	height: 0;
+	overflow: hidden;
+	transition: height .5s;
 }
 
 .panel-collapse.in {
-	display: block;
+	height: auto;
+	transition: height .5s;
 }
+
